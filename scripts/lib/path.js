@@ -55,8 +55,6 @@ function nextPoint(points, start, end, visited) {
 
         const distPoints = calculateDistance(points[start], points[i]);
 
-        if (distPointToEnd === distToEnd) return i;
-
         if (distPoints >= closestDisPoints) continue;
 
         closestDisPoints = distPoints;
