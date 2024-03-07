@@ -17,34 +17,42 @@ if (!ctx) throw new Error("Could not create canvas context");
 const controls = document.querySelector("#controls");
 if (!controls) throw ReferenceError("Could not find element '#controls'");
 /** @type {HTMLInputElement | null} */
-const inpSteps = controls.querySelector("#inpSteps");
+const inpSteps = document.querySelector("#inpSteps");
 if (!inpSteps) throw ReferenceError("Could not find element '#inpSteps'");
 /** @type {HTMLLabelElement | null} */
-const labSteps = controls.querySelector("#labSteps");
+const labSteps = document.querySelector("#labSteps");
 if (!labSteps) throw ReferenceError("Could not find element '#labSteps'");
 /** @type {HTMLOutputElement | null} */
-const outTime = controls.querySelector("#time > output");
+const outTime = document.querySelector("#time > output");
 if (!outTime) throw ReferenceError("Could not find element '#time > output'");
 /** @type {HTMLOutputElement | null} */
-const outDistance = controls.querySelector("#distance > output");
+const outDistance = document.querySelector("#distance > output");
 if (!outDistance)
     throw ReferenceError("Could not find element '#distance > output'");
 /** @type {HTMLButtonElement | null} */
 const btnReset = document.querySelector("#btnReset");
 if (!btnReset) throw ReferenceError("Could not find element '#btnReset'");
-/** @type {HTMLDivElement | null} */
-const divSize = document.querySelector("#size");
-if (!divSize) throw new ReferenceError("Could not find element '#size'");
+/** @type {HTMLOutputElement | null} */
+const outSize = document.querySelector("#size > output");
+if (!outSize)
+    throw new ReferenceError("Could not find element '#size > output'");
+/** @type {HTMLOutputElement | null} */
+const outAmmount = document.querySelector("#ammount > output");
+if (!outAmmount)
+    throw ReferenceError("Could not find element '#ammount > output'");
 
 const MAX_HEIGHT = 500;
 const MAX_WIDTH = 500;
 canvas.height = MAX_HEIGHT;
 canvas.width = MAX_WIDTH;
-divSize.innerText = `Size: ${MAX_WIDTH}x${MAX_HEIGHT}px`;
+outSize.innerText = `${MAX_WIDTH}x${MAX_HEIGHT}`;
 
 controls.classList.add("hidden");
 inpSteps.min = "0";
 inpSteps.step = "1";
+
+const pointsAmmount = 50;
+outAmmount.innerText = pointsAmmount.toString();
 
 // Variables
 /** @type {Point[]} */
@@ -102,7 +110,7 @@ inpSteps.addEventListener("input", handleStep);
 const handleReset = () => {
     points = [];
 
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < pointsAmmount; i++) {
         /** @type {Point} */
         const point = {
             x: Math.floor(Math.random() * MAX_WIDTH),

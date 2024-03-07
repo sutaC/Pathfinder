@@ -41,14 +41,9 @@ section.info {
 
 #controls > * {
     width: 50%;
-    margin: auto;
+    margin: 1em auto;
     text-align-last: left;
     font-size: 1.1rem;
-}
-
-section.info > *,
-#controls > * {
-    margin-bottom: 1rem;
 }
 
 output {
@@ -63,6 +58,14 @@ label {
     display: block;
 }
 
+p {
+    margin: 1em 0;
+}
+
+.field {
+    margin: 1em 0;
+}
+
 #inpSteps {
     display: block;
     width: 100%;
@@ -75,6 +78,7 @@ button {
     border: none;
     font-size: 1rem;
     padding: 0.33em 0.5em;
+    margin: 0.125em 0.25em;
     border-radius: 0.5rem;
     cursor: pointer;
     box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.2);

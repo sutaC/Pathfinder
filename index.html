@@ -15,16 +15,21 @@
 
             <section aria-labelledby="hInfo" class="info">
                 <h2 id="hInfo">Info</h2>
-                <button id="btnFindPath">Find path</button>
+
+                <div class="data">
+                    <button id="btnFindPath">Find path</button>
+                    <button type="reset" id="btnReset">Reset</button>
+                    <p id="size">Size: <output>0x0</output>px</p>
+                    <p id="ammount">Ammount of points: <output>0</output></p>
+                </div>
+
                 <div id="controls">
-                    <div>
+                    <div class="field">
                         <label for="inpSteps" id="labSteps">1/1</label>
                         <input type="range" id="inpSteps" />
                     </div>
-                    <div id="time">Time: <output>0</output>ms</div>
-                    <div id="distance">Distance: <output>0</output>px</div>
-                    <div id="size">Size: 0x0px</div>
-                    <button type="reset" id="btnReset">Reset</button>
+                    <p id="time">Time: <output>0</output>ms</p>
+                    <p id="distance">Distance: <output>0</output>px</p>
                 </div>
             </section>
         </main>
